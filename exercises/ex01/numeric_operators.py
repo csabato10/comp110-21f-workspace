@@ -1,4 +1,4 @@
-"numerical operators practice"
+"""numerical operators practice."""
 
 __author__ = "730466575"
 
@@ -8,4 +8,4 @@ right_hand: int = int(input("Right-hand side: "))
 print(str(left_hand) + " ** " + str(right_hand) + " is " + str(left_hand ** right_hand))
 print(str(left_hand) + " / " + str(right_hand) + " is " + str(left_hand / right_hand))
 print(str(left_hand) + " // " + str(right_hand) + " is " + str(left_hand // right_hand))
-print(str(left_hand) + " // " + str(right_hand) + " is " + str(left_hand % right_hand))
+print(str(left_hand) + " % " + str(right_hand) + " is " + str(left_hand % right_hand))
