@@ -25,4 +25,6 @@ else:
         print("Expect to hear from a long lost friend.")
     else:
         print("Taking a trip right now would benefit you greatly!")
-print("Now, go spread positive vibes.")
+
+
+print("Now, go spread positive vibes!")
