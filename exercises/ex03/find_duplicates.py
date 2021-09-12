@@ -12,7 +12,7 @@ while i < len(word):
     character: str = word[i]
     while j < len(word) - 1:
         if character == word[j]:
-            dup = not False
+            dup = True
         j += 1
     i += 1
 
