@@ -5,17 +5,15 @@ __author__ = "730466575"
 word: str = input("Enter a word: ")
 i: int = 0
 counter: int = 0
+dup: bool = False
 
 while i < len(word):
     j: int = i + 1
     character: str = word[i]
     while j < len(word) - 1:
         if character == word[j]:
-            counter += 1
+            dup = not False
         j += 1
     i += 1
 
-if counter > 0:
-    print("True")
-else:
-    print("False")
+print(dup)
