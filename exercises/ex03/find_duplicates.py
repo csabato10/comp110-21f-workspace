@@ -10,7 +10,7 @@ dup: bool = False
 while i < len(word):
     j: int = i + 1
     character: str = word[i]
-    while j < len(word) - 1:
+    while j < len(word):
         if character == word[j]:
             dup = True
         j += 1
