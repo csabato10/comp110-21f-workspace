@@ -1,6 +1,9 @@
 """Under the Influence"""
-
 import random
+
+
+__author__: str = "730466575"
+
 points: int = 0
 player: str = ""
 bio: str = ""
