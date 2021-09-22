@@ -1,4 +1,4 @@
-"""Under the Influence"""
+"""Under the Influence."""
 import random
 
 
@@ -10,7 +10,8 @@ bio: str = ""
 NAMED_CONSTANT: str = "\U0001F4F8"
 
 
-def adventurous():
+def adventurous() -> None:
+    """Profile type: Adventurous"""
     print("Ooooo I bet you think you're quirky and cool for saying you're adventurous.")
     global bio
     global points
@@ -26,7 +27,8 @@ def adventurous():
     adventure_picture()
 
 
-def adventure_picture():
+def adventure_picture() -> None:
+    """Insta picture type: Adventurous"""
     global points
     pic_one: int = int(input("What type of picture do you want to post?\n1. Beach picture\n2. Cool car picture\n3. Night club picture\n4. Cliff diving picture\n5. Haunted house picture\nOption number: "))
     filter_on_image: str = input("Do you want to put a filter on this picture? Y or N: ").upper()
@@ -54,7 +56,8 @@ def adventure_picture():
         print("You really need to get better with technology if you want to become and influencer because I have no idea what you just said.")
 
 
-def confidence():
+def confidence() -> None:
+    """Profile type: Confident"""
     print("I bet you think your confidence is attractive. The followers will determine that.")
     global bio
     global points
@@ -70,7 +73,8 @@ def confidence():
     confident_picture()
 
 
-def confident_picture():
+def confident_picture() -> None:
+    """Insta picture type: Confident"""
     global points
     pic_one: int = int(input("What type of picture do you want to post?\n1. Bathing suit picture\n2. Sunglasses picture\n3. Golden hour picture\n4. Modeling picture\n5. Picture with friends\nOption number: "))
     if pic_one == 1:
@@ -88,7 +92,8 @@ def confident_picture():
     print("You currently have", points, "followers.")
 
 
-def vulnerable():
+def vulnerable() -> None:
+    """Profile type: Vulnerable"""
     print("Boring. Whatever. Do what you want I guess.")
     global bio
     global points
@@ -104,7 +109,8 @@ def vulnerable():
     vulnerable_picture()
 
 
-def vulnerable_picture():
+def vulnerable_picture() -> None:
+    """Insta picture type: Vulnerable"""
     global points
     pic_one: int = int(input("What type of picture do you want to post?\n1. Picture of you with a dog\n2. A picture of a cup of coffee on a cold day\n3. Sunset picture\n4. Movie on the couch picture\n5. Picture with a significant other\nOption number: "))
     if pic_one == 1:
@@ -124,6 +130,7 @@ def vulnerable_picture():
 
 
 def tiktok() -> str:
+    """Post a tiktok"""
     global points
     print("I have no idea why you want to become a TikTok influencer too because I can tell that you don't know how to dance and are not that funny either.")
     vid_type: int = int(input("What kind of TikTok do you want to make?\n1. Dance video\n2. Duet a famous TikToker\n3. Tell a funny joke/story\nOption number: "))
@@ -147,7 +154,8 @@ def tiktok() -> str:
     return str(random.randint(0, 5)) + " people dueted or stitched your most recent TikTok."
 
 
-def insta():
+def insta() -> None:
+    """Post on insta"""
     global points
     picture: int = int(input("What kind of vibe do you want your Insta post to have?\n1. Adventurous\n2. Cool\n3. Casual\nChoice number: "))
     if picture == 1:
@@ -161,6 +169,7 @@ def insta():
 
 
 def twitter() -> str:
+    """Tweet on twitter"""
     global player
     global points
     tweet: str = input("What stupid thing do you want to post now that you feel like everyone needs to read?\n" + player + ": ")
@@ -188,7 +197,8 @@ def twitter() -> str:
     return "On top of likes, you received " + str(random.randint(0, 100)) + " retweets on that tweet."
                 
 
-def biography():
+def biography() -> None:
+    """Write a biography"""
     global points
     print("Time to decide what kind of online persona do you want to create for yourself")
     while True:
@@ -208,6 +218,7 @@ def biography():
     
 
 def greet() -> None:
+    """Greet the player"""
     print("Sup loser. Welcome to Under the Influence " + NAMED_CONSTANT + ", the fastest way to become a social media icon.")
     global player
     player = "@" + input("What is your username? ")
@@ -216,6 +227,7 @@ def greet() -> None:
 
 
 def certified(player: str) -> str:
+    """Check player certification"""
     print("Alright, it's time to see if you were able to get certified on social media. You know...that check mark that means you're officially cool.")
     i: int = 1
     while i <= 10:
@@ -226,6 +238,7 @@ def certified(player: str) -> str:
     
 
 def profile_pic(points: int) -> int:
+    """Create a profile picture"""
     while True:
         ppf_type: int = int(input("What type of picture do you want?\n1. Black and white solo picture\n2. Picture centered on you with other people present\n3. Picture of you and an animal\n4. Picture of something random\nProfile picture type: "))
         if ppf_type == 1:
@@ -243,7 +256,7 @@ def profile_pic(points: int) -> int:
         print("It seems like you didn't pick one of the listed options. Please select an item from the list.")
     
 
-def main():
+def main() -> None:
     greet()
     print(f"Your profile picture earned you {profile_pic(points)} new followers. Before you get too excited, I'm sure one of those people is your mom, you're not famous yet.")
     biography()
