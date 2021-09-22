@@ -128,7 +128,15 @@ def tiktok() -> str:
     if vid_type == 1:
         points += random.randint(50, points + 500)
     elif vid_type == 2:
-        points += random.randint(90, points + 300)
+        tiktok_person: int = int(input("What famous tiktoker do you want to duet?\n1. Charlie D'Amelio\n2.Dixie D'Amelio\n3. Addision Rae\nTiktoker number: "))
+        if tiktok_person == 1:
+            points += random.randint(90, points + 300)
+        elif tiktok_person == 2:
+            points += random.randint(90, points + 100)
+        elif tiktok_person == 3:
+            points += random.randint(90, points + 50)
+        else:
+            points += random.randint(90, points)
     elif vid_type == 3:
         points += random.randint(0, points + 400)
     else:
@@ -192,7 +200,7 @@ def biography():
         
 
 def greet() -> None:
-    print("Sup loser. Welcome to Under the Influence, the fastest way to become a social media icon.")
+    print("Sup loser. Welcome to Under the Influence " + NAMED_CONSTANT + ", the fastest way to become a social media icon.")
     global player
     player = "@" + input("What is your username? ")
     print(player + " is such a lame username. It's too late to change it though so I guess you're stuck with it.")
