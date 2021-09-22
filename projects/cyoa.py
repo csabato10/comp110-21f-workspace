@@ -124,7 +124,7 @@ def tiktok() -> str:
     global points
     print("I have no idea why you want to become a TikTok influencer too because I can tell that you don't know how to dance and are not that funny either.")
     vid_type: int = int(input("What kind of TikTok do you want to make?\n1. Dance video\n2. Duet a famous TikToker\n3. Tell a funny joke/story\nOption number: "))
-    print("The TikTok algorthim is weird so don't expect too much.")
+    print("The TikTok algorthim is weird so don't expect too much " + player + ".")
     if vid_type == 1:
         points += random.randint(50, points + 500)
     elif vid_type == 2:
@@ -213,7 +213,7 @@ def profile_pic(points: int) -> int:
     print("First step, aside from your username duh, is creating a profile picture.")
     while True:
         ppf_type: int = int(input("What type of picture do you want?\n1. Black and white solo picture\n2. Picture centered on you with other people present\n3. Picture of you and an animal\n4. Picture of something random\nProfile picture type: "))
-        print("Just so you know, if people don't know what you look like, they probably won't want to follow you.")
+        print("Just so you know, " + player + ", if people don't know what you look like, they probably won't want to follow you.")
         ppf_confirmation: str = input("That being said, do you want to change you previous choice? Y or N: ").upper()
         if ppf_confirmation == "Y":
             continue
@@ -244,7 +244,6 @@ def main():
         else:
             print("You really need to get better with technology if you want to become and influencer because I have no idea what you just said.")
             print("Try again to tell me what you want to do.")
-        NAMED_CONSTANT
         print("Your follower count is now: " + str(points))
         print(NAMED_CONSTANT)
     if points >= 10_000:
