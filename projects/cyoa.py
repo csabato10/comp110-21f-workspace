@@ -191,16 +191,21 @@ def twitter() -> str:
 def biography():
     global points
     print("Time to decide what kind of online persona do you want to create for yourself")
-    profile: int = int(input('If you change your mind and decide being an influencer is no longer the journey for you, just type in 4: \n 1. Adventurous and badass \U0001F919\U0001F609 \n 2. Confident and cool \U0001F61D \n 3. Cute and casual \U0001F499\nInfluencer type: '))
-    if profile == 4:
-        print("Lame. You ended with " + str(points) + " followers.")
-    elif profile == 1:
-        adventurous()
-    elif profile == 2:
-        confidence()
-    elif profile == 3:
-        vulnerable()
-        
+    while True:
+        profile: int = int(input("1. Adventurous and badass \U0001F919\U0001F609 \n2. Confident and cool \U0001F61D \n3. Cute and casual \U0001F499\nInfluencer type: "))
+        if profile == 1:
+            adventurous()
+            break
+        elif profile == 2:
+            confidence()
+            break
+        elif profile == 3:
+            vulnerable()
+            break
+        else:
+            print("I'm not sure what you said, try selecting one of the listed options again.")
+            continue
+    
 
 def greet() -> None:
     print("Sup loser. Welcome to Under the Influence " + NAMED_CONSTANT + ", the fastest way to become a social media icon.")
@@ -221,27 +226,29 @@ def certified(player: str) -> str:
     
 
 def profile_pic(points: int) -> int:
-    print("First step, aside from your username duh, is creating a profile picture.")
     while True:
         ppf_type: int = int(input("What type of picture do you want?\n1. Black and white solo picture\n2. Picture centered on you with other people present\n3. Picture of you and an animal\n4. Picture of something random\nProfile picture type: "))
-        print("Just so you know, " + player + ", if people don't know what you look like, they probably won't want to follow you.")
-        ppf_confirmation: str = input("That being said, do you want to change you previous choice? Y or N: ").upper()
-        if ppf_confirmation == "Y":
-            continue
-        else:
-            if ppf_type == 1 or 2:
-                points += 70
-            elif ppf_type == 3:
-                points += 100
-            else:
-                points += 8
-        return points
-
+        if ppf_type == 1:
+            points += 100
+            return points
+        if ppf_type == 2:
+            points += 90
+            return points
+        elif ppf_type == 3:
+            points += 110
+            return points
+        elif ppf_type == 4:
+            points += 40
+            return points
+        print("It seems like you didn't pick one of the listed options. Please select an item from the list.")
+    
 
 def main():
     greet()
     print(f"Your profile picture earned you {profile_pic(points)} new followers. Before you get too excited, I'm sure one of those people is your mom, you're not famous yet.")
     biography()
+    print("Your follower count is now: " + str(points))
+    print(NAMED_CONSTANT)
     while True:
         influencer_loop: str = input("Where would you like to post next? Insta, Tiktok, or Twitter? If you think you've received enough followers to be certified on each account, type 'quit': ").lower()
         if influencer_loop == "insta":
@@ -261,7 +268,7 @@ def main():
         print(f"Influencer status: {certified(player)}")
         print("Wow, I really didn't think you could do it. Congrats, I'm honestly impressed.\nThanks for choosing Under the Influence for your journey to fame.\nTiff out.")
     else:
-        print("Influencer status: " + player + ". Awww. You really hate to see it. Good try at least? Maybe in a different life? It was definitely worth a shot, you're just not the right type for this.\nTiff out.")
+        print("Influencer status: " + player + ". Awww, no check mark beside your name. You really hate to see it. Good try at least? Maybe in a different life? It was definitely worth a shot, you're just not the right type for this.\nTiff out.")
 
 
 if __name__ == "__main__":
