@@ -9,10 +9,10 @@ def all(a: list[int], b: int) -> bool:
     """Determines whether an integer is present in a list."""
     i: int = 0
     while i < len(a):
-        if a[i] != b:
-            return False
+        if a[i] == b:
+            return True
         i += 1
-    return True
+    return False
 
 
 def is_equal(list_one: list[int], list_two: list[int]) -> bool:
