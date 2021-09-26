@@ -8,11 +8,13 @@ __author__ = "730466575"
 def all(a: list[int], b: int) -> bool:
     """Determines whether an integer is present in a list."""
     i: int = 0
+    if len(a) == 0:
+        return False
     while i < len(a):
-        if a[i] == b:
-            return True
+        if a[i] != b:
+            return False
         i += 1
-    return False
+    return True
 
 
 def is_equal(list_one: list[int], list_two: list[int]) -> bool:
