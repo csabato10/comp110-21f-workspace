@@ -25,12 +25,12 @@ def sub(b: list[int], start: int, end: int) -> list[int]:
     if len(b) == 0 or start >= len(b) or end <= 0:
         return indexed_list
     
-    if start <= 0:
+    if start < 0:
         indexed_list.append(b[0])
     else:
         indexed_list.append(b[start])
     
-    if end >= len(b):
+    if end > len(b):
         indexed_list.append(b[-1])
     else:
         indexed_list.append(b[end])
