@@ -20,21 +20,22 @@ def only_evens(numbs: list[int]) -> list[int]:
 
 
 def sub(b: list[int], start: int, end: int) -> list[int]:
-    """Returns list values at given indices."""
+    """Returns list values between given indices."""
     indexed_list: list[int] = []
     if len(b) == 0 or start >= len(b) or end <= 0:
         return indexed_list
-    
     if start < 0:
-        indexed_list.append(b[0])
-    else:
-        indexed_list.append(b[start])
-    
+        start = 0
     if end > len(b):
-        indexed_list.append(b[-1])
-    else:
-        indexed_list.append(b[end])
+        end = b[-1]
+    i: int = start
+    while i < end:
+        indexed_list.append(b[i])
+        i += 1
     return indexed_list
+
+
+print(sub([1, 2, 3, 4, 5], -1, 9))
 
 
 """Concat."""

@@ -13,7 +13,7 @@ def test_only_evens_zeros() -> None:
 
 
 def test_only_evens_one_number() -> None:
-    """Test only evens: one integer number"""
+    """Test only evens: one integer number."""
     numbs: list[int] = [2, 2, 2]
     assert only_evens(numbs) == [2, 2, 2]
 
@@ -37,7 +37,7 @@ def test_sub_negative_start() -> None:
     b: list[int] = [2, 3, 4, 5]
     start: int = -3
     end: int = 2
-    assert sub(b, start, end) == [2, 4]
+    assert sub(b, start, end) == [2, 3, 4]
 
 
 def test_sub_normal_list() -> None:
@@ -61,7 +61,7 @@ def test_sub_same_large_end() -> None:
     b: list[int] = [2, 3, 4, 5]
     start: int = 1
     end: int = 8
-    assert sub(b, start, end) == [3, 5]
+    assert sub(b, start, end) == [3, 4, 5]
 
 
 def test_concat_random_numbers() -> None:
