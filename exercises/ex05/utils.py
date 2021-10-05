@@ -27,7 +27,7 @@ def sub(b: list[int], start: int, end: int) -> list[int]:
     if start < 0:
         start = 0
     if end > len(b):
-        end = b[-1]
+        end = len(b)
     i: int = start
     while i < end:
         indexed_list.append(b[i])
