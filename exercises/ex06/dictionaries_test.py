@@ -2,15 +2,16 @@
  
 
 from exercises.ex06.dictionaries import invert, favorite_color, count
-
+import pytest
 
 __author__ = "730466575"
 
 
 def test_same_key_in_invert() -> None:
     """Test for the same key in invert."""
-    a = {"string": "bean", "pinto": "bean"}
-    assert invert(a) == KeyError("Two of the same key.")
+    with pytest.raises(KeyError):
+        a = {"string": "bean", "pinto": "bean"}
+        invert(a)
 
 
 def test_phrase_invert() -> None:

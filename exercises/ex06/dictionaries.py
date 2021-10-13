@@ -15,7 +15,7 @@ def invert(a: dict[str, str]) -> dict[str, str]:
             if a[key] == check_key:
                 count += 1
         if count > 1:
-            raise KeyError("Two of the same key.")
+            raise KeyError('Two of the same key.')
     for key in a:
         new_dictionary[a[key]] = key
     return new_dictionary
