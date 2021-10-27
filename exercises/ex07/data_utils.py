@@ -43,14 +43,17 @@ def columnar(table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(table_values: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
     """Table of only ceratin rows."""
     result: dict[str, list[str]] = {}
-    for value in table_values:
-        i: int = 0
-        old_list: list[str] = table_values[value]
-        new_list: list[str] = []
-        while i < rows:
-            new_list.append(old_list[i])
-            i += 1
-        result[value] = new_list
+    if rows >= len(table_values):
+        result = table_values
+    else:
+        for value in table_values:
+            i: int = 0
+            old_list: list[str] = table_values[value]
+            new_list: list[str] = []
+            while i < rows:
+                new_list.append(old_list[i])
+                i += 1
+            result[value] = new_list
     return result
 
 
