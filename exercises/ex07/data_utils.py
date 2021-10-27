@@ -76,6 +76,7 @@ def concat(table_one: dict[str, list[str]], table_two: dict[str, list[str]]) -> 
 
 
 def count(given_list: list[str]) -> dict[str, int]:
+    """Count values in a list and display in a dictionary."""
     result: dict[str, int] = {}
     for value in given_list:
         if value in result:
