@@ -30,3 +30,11 @@ def average_grades(y: dict[str, list[int]]) -> dict[str, float]:
 
 
 print(average_grades({"John": [54, 86, 90], "Carly": [90, 94, 92]}))
+
+
+def read_through_rows(x: dict[str, list[str]]) -> list[str]:
+    result: list[str] = []
+    for row in x:
+        result.append(row)
+
+    return result
