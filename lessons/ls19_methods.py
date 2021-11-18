@@ -13,8 +13,8 @@ class Point:
         self.y = y
 
     def __repr__(self) -> str:
-        """Priduce a str representation of a Point for Python!"""
-        return f"Poinnt({self.x}, {self.y})"
+        """Produce a str representation of a Point for Python!"""
+        return f"Point({self.x}, {self.y})"
 
     def __mul__(self, factor: float) -> Point:
         """Overload the multiplication operator for Point * float."""
